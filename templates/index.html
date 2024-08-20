@@ -1,0 +1,93 @@
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Sentiment Analysis Tool</title>
+        <style>
+
+            body {
+                background-image: url("bgimg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f2f2f2;
+            }
+
+            .container {
+                margin: 20px auto;
+                width: 600px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            label {
+                display: block;
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            textarea {
+                width: 100%;
+                height: 150px;
+                font-size: 18px;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                margin-bottom: 20px;
+            }
+
+            button {
+                background-color: #4CAF50;
+                color: white;
+                font-size: 18px;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #3e8e41;
+            }
+
+            #result {
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .error {
+                color: red;
+                font-size: 16px;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Sentiment Analysis Tool</h1>
+            <form action="/" method="post">
+                <label for="review">Enter the review for Analysis:</label><br>
+                <textarea id="review" name="review" rows="4" cols="50"></textarea><br>
+                <input type="submit" value="Analyze">
+            </form>
+
+            {% if result %}
+            <h2>Result:</h2>
+            <p><h3>{{ result }}</h3></p>
+            {% endif %}
+        </div>
+    </body>
+
+    </html>

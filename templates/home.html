@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <title>Sentiment Analysis Tool</title>
+    <style>        
+        body {            
+            font-family: Arial, sans-serif;
+            height: 100%;
+            /* background: linear-gradient(#ffafbd, #ffc3a0) fixed;
+            background: linear-gradient(to left, #f3904f, #3b4371) fixed; */
+            background: #141E30 fixed;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #243B55, #141E30) fixed;  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #243B55, #141E30) fixed;
+        }
+        
+        .container {
+            margin: 20px auto;
+            width: 600px;
+            background-color: #f7f7f7;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        #result {
+            font-size: 42px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .error {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* NEW STYLES */
+        /* Adjust the container's width and margin */
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Center the form */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Style the form elements */
+        label {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            font-size: 20px;
+            padding: 15px;
+            resize: none;
+            margin-bottom: 30px;
+        }
+
+        input[type="submit"] {
+            font-size: 22px;
+            padding: 10px 25px;
+            border-radius: 7px;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        /* Style the result element */
+        #result {
+            font-size: 42px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis Tool</h1>
+        <form action="/" method="post">
+            <label for="review">Enter the review for Analysis:</label><br>
+            <textarea id="review" name="review" rows="4" cols="50"></textarea><br>
+            <input type="submit" value="Analyze">
+        </form>
+
+        {% if result %}
+        <h2>Result:</h2>
+        <p>{{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
